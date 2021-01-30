@@ -17,6 +17,11 @@ public class MainLogicScript : MonoBehaviour
             {
                 SubtaskModal.SetActive(true);
             }
-        } 
+            if (hit && hitInfo.transform.gameObject.tag == "storeitem") 
+            {
+                Debug.Log("picked up item "+hitInfo.transform.gameObject.transform.parent.name);
+                hitInfo.transform.gameObject.transform.parent.gameObject.SetActive(false);
+            }
+        }
     }
 }
