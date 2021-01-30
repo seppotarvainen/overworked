@@ -8,40 +8,71 @@ public class Player : MonoBehaviour
 
     private Rigidbody rb;
     private Vector3 playerVelocity;
-    private float playerSpeed = 1.0f;
+    public float playerSpeed = 1.0f;
+    public float sprintMul = 1.0f;
     private float gravityValue = -9.81f;
     private bool isMoving;
+
+    Animator animator;
 
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
+
+
+// movement ja animaatio loppuu kun tormataan seinaan (ei toimi)
+/*     void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "wall")
+        {
+            rb.velocity = Vector3.zero;
+            //Debug.Log("hit wall");
+            animator.SetBool("isWalking", false);
+        }
+    } */
 
     void Update()
     {
+        float xMovement = Input.GetAxisRaw("Horizontal");
+        float zMovement = Input.GetAxisRaw("Vertical");
+        
+        Vector3 move = new Vector3(xMovement, 0, zMovement).normalized;
+        rb.velocity += move * (playerSpeed * sprintMul) * Time.deltaTime;
 
-/*         if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
+
+        Vector3 movementDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+        if (movementDir != Vector3.zero)
         {
-            //transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * playerSpeed);
-            rb.velocity += transform.right * Input.GetAxisRaw("Horizontal") * (Time.deltaTime * playerSpeed);
-            isMoving = true;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movementDir.normalized), 0.1f);
         }
-        if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
+
+        bool isWalking = animator.GetBool("isWalking");
+        if (!isWalking && (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0))
         {
-            //transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * playerSpeed);
-            rb.velocity += transform.forward * Input.GetAxisRaw("Vertical") * (Time.deltaTime * playerSpeed);
-            isMoving = true;
-        } */
+            animator.SetBool("isWalking", true);
+        }
+        if (isWalking && (Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0)) 
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isRunning", false);
+            sprintMul = 1.0f;
+        }
 
+        bool runPressed = Input.GetKey("left shift");
+        bool isrunning = animator.GetBool("isRunning");
+        if (!isrunning && (isWalking && runPressed))
+        {
+            animator.SetBool("isRunning", true);
+            sprintMul = 2.0f;
+        }
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        rb.velocity += move * Time.deltaTime * playerSpeed;
-        //controller.Move(move * Time.deltaTime * playerSpeed);
-
-        //playerVelocity.y += gravityValue * Time.deltaTime;
-        //controller.Move(playerVelocity * Time.deltaTime);
-
-
+        if (isrunning && (!isWalking || !runPressed))
+        {
+            animator.SetBool("isRunning", false);
+            sprintMul = 1.0f;
+        }
 
     }
 }
