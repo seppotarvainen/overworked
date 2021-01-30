@@ -6,17 +6,26 @@ public class Customer : MonoBehaviour
 {
   
     public string productName = "";
+
     private bool isProductFound = false;
+    private Transform followed;
+    private Animator animator;
+
+
+    private float speed = 2f;
+    private float turnSpeed = 5f;
+    private float targetDistance = 1.5f;
 
 
     void Start()
     {
         // add +1 customer
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        // eli asiakas ossaa kysyä tuotetta, sillä lähtee timeri pyörimään, lisään metodit ajan loppumiseen ja tavaran löytymiseen.
+        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -27,16 +36,52 @@ public class Customer : MonoBehaviour
             return;
 
         ShowRequiredProduct();
+
+        FollowPlayer(player);
     }
+
 
     public void ShowRequiredProduct()
     {
         Debug.Log(productName);
     }
 
+    private void FollowPlayer(Player player)
+    {
+        followed = player.transform;
+        StartCoroutine(RunFollow());
+    }
+
     public bool GiveProduct(string foundProduct) {
         isProductFound = productName.Equals(foundProduct);
         return isProductFound;
     }
+
+    private IEnumerator RunFollow()
+    {
+        yield return new WaitForSeconds(1);
+      
+        while (followed != null)
+        {
+            Vector3 currentFollowPos = followed.transform.position + (Vector3.back * targetDistance);
+            Vector3 diff = transform.position - currentFollowPos;
+
+            if (diff.magnitude < 1)
+            {
+                animator.SetBool("isWalking", false);
+            }
+            else
+            {
+                animator.SetBool("isWalking", true);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(currentFollowPos - transform.position), Time.deltaTime * turnSpeed);
+                transform.position += transform.forward * Time.deltaTime * speed;
+            }
+            
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return null;
+    }
+
 
 }
