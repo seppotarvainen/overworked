@@ -15,10 +15,14 @@ public class Customer : MonoBehaviour
     private float targetDistance = 1.5f;
     private ProductDisplay productDisplay;
 
+    private Vector3 exitPosition;
+
 
     void Start()
     {
         GameManager.Instance.AddCustomer();
+        exitPosition = transform.position;
+
         animator = GetComponentInChildren<Animator>();
         productDisplay = GetComponent<ProductDisplay>();
         product = ProductService.Instance.GetRandomProduct();
