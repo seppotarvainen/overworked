@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Customer : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Customer : MonoBehaviour
     private float turnSpeed = 5f;
     private float targetDistance = 1.5f;
     private ProductDisplay productDisplay;
+    private NavMeshAgent agent;
 
     private Vector3 exitPosition;
 
@@ -22,6 +24,7 @@ public class Customer : MonoBehaviour
     {
         GameManager.Instance.AddCustomer();
         exitPosition = transform.position;
+        agent = GetComponent<NavMeshAgent>();
 
         animator = GetComponentInChildren<Animator>();
         productDisplay = GetComponent<ProductDisplay>();
@@ -77,9 +80,9 @@ public class Customer : MonoBehaviour
             }
             else
             {
+                agent.destination = currentFollowPos;
                 animator.SetBool("isWalking", true);
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(currentFollowPos - transform.position), Time.deltaTime * turnSpeed);
-                transform.position += transform.forward * Time.deltaTime * speed;
+                yield return new WaitForSeconds(0.1f);
             }
             
             yield return new WaitForEndOfFrame();
