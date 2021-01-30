@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
             sprintMul = 1.0f;
         }
 
-        bool runPressed = Input.GetKey("left shift");
+        bool runPressed = Input.GetButton("Fire3");
         bool isrunning = animator.GetBool("isRunning");
         if (!isrunning && (isWalking && runPressed))
         {
