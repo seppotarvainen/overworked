@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Customer : MonoBehaviour
 {
-
     public Product product;
 
     private bool isProductFound = false;
     private Transform followed;
     private Animator animator;
-
 
     private float speed = 2f;
     private float turnSpeed = 5f;
@@ -20,11 +18,10 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
-        // add +1 customer
+        GameManager.Instance.AddCustomer();
         animator = GetComponentInChildren<Animator>();
         productDisplay = GetComponent<ProductDisplay>();
         product = ProductService.Instance.GetRandomProduct();
-
     }
 
     void Update()
@@ -48,7 +45,6 @@ public class Customer : MonoBehaviour
     public void ShowRequiredProduct()
     {
         productDisplay.DisplayProduct(product);
-        Debug.Log(product.productName);
     }
 
     private void FollowPlayer(Player player)
