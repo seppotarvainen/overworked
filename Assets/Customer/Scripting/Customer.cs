@@ -11,14 +11,13 @@ public class Customer : MonoBehaviour
     private Transform followed;
     private Animator animator;
 
-    private float speed = 2f;
-    private float turnSpeed = 5f;
     private float targetDistance = 1.5f;
     private ProductDisplay productDisplay;
     private NavMeshAgent agent;
 
     private Vector3 exitPosition;
-
+    private List<Vector3> shelfPositions;
+    private int prevShelfPosIndex = -1;
 
     void Start()
     {
@@ -29,11 +28,30 @@ public class Customer : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         productDisplay = GetComponent<ProductDisplay>();
         product = ProductService.Instance.GetRandomProduct();
+
+        StartCoroutine(RunWalkFreely());
     }
 
-    void Update()
+    public void SetShelfPositions(List<Vector3> positions)
     {
-        
+        shelfPositions = positions;
+    }
+
+    private Vector3 GetRandomShelfPosition()
+    {
+        if (shelfPositions.Count == 1)
+        {
+            return shelfPositions[0];
+        }
+
+        int newIndex = Random.Range(0, shelfPositions.Count);
+        while (prevShelfPosIndex == newIndex)
+        {
+            newIndex = Random.Range(0, shelfPositions.Count);
+        }
+
+        prevShelfPosIndex = newIndex;
+        return shelfPositions[newIndex];
     }
 
     public void OnTriggerEnter(Collider other)
@@ -45,7 +63,10 @@ public class Customer : MonoBehaviour
 
         ShowRequiredProduct();
 
-        FollowPlayer(player);
+        if (followed == null)
+        {
+            FollowPlayer(player);
+        }
     }
 
 
@@ -56,17 +77,50 @@ public class Customer : MonoBehaviour
 
     private void FollowPlayer(Player player)
     {
+        Debug.Log("Start follow!");
+        StopAllCoroutines();
         followed = player.transform;
         StartCoroutine(RunFollow());
     }
 
     public bool IsCorrectProduct(Product foundProduct) {
         isProductFound = product.productName.Equals(foundProduct);
+
+        // if correct, set destination to exit.
+
         return isProductFound;
+    }
+
+    private IEnumerator RunWalkFreely()
+    {
+        yield return new WaitForSeconds(1);
+
+        agent.destination = GetRandomShelfPosition();
+        animator.SetBool("isWalking", true);
+
+        while (followed == null)
+        {
+            Vector3 diff = transform.position - agent.destination;
+
+            Debug.Log(string.Format("{0}, {1}", diff.magnitude, agent.stoppingDistance));
+            if (diff.magnitude <= agent.stoppingDistance)
+            {
+                animator.SetBool("isWalking", false);
+                agent.isStopped = true;
+                yield return null;
+                yield return new WaitForSeconds(1);
+
+                agent.destination = GetRandomShelfPosition();
+                agent.isStopped = false;
+                animator.SetBool("isWalking", true);
+            }
+            yield return null;
+        }
     }
 
     private IEnumerator RunFollow()
     {
+        agent.destination = transform.position;
         yield return new WaitForSeconds(1);
       
         while (followed != null)
@@ -74,7 +128,7 @@ public class Customer : MonoBehaviour
             Vector3 currentFollowPos = followed.transform.position + (Vector3.back * targetDistance);
             Vector3 diff = transform.position - currentFollowPos;
 
-            if (diff.magnitude < 1)
+            if (diff.magnitude <= agent.stoppingDistance)
             {
                 animator.SetBool("isWalking", false);
             }
