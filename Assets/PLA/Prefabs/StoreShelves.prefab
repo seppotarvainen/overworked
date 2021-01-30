@@ -429,6 +429,10 @@ PrefabInstance:
       value: StoreShelf (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8193678771279020448, guid: d5dfbaa6db2c2364dbb31eb57924be4d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193678771279020448, guid: d5dfbaa6db2c2364dbb31eb57924be4d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -724,6 +728,10 @@ PrefabInstance:
       value: StoreShelf (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8193678771279020448, guid: d5dfbaa6db2c2364dbb31eb57924be4d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193678771279020448, guid: d5dfbaa6db2c2364dbb31eb57924be4d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -869,6 +877,10 @@ PrefabInstance:
     - target: {fileID: 8193678771279020448, guid: d5dfbaa6db2c2364dbb31eb57924be4d, type: 3}
       propertyPath: m_Name
       value: StoreShelf (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193678771279020448, guid: d5dfbaa6db2c2364dbb31eb57924be4d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8193678771279020448, guid: d5dfbaa6db2c2364dbb31eb57924be4d, type: 3}
       propertyPath: m_StaticEditorFlags
