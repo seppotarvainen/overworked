@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7069685285017504481}
   m_Layer: 0
   m_Name: Dummy Shelf
-  m_TagString: Untagged
+  m_TagString: shelf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
