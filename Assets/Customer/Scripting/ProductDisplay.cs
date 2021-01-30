@@ -8,10 +8,9 @@ public class ProductDisplay : MonoBehaviour
     Transform objectToFollow;
     public float showtime = 5f;
 
-    public Sprite product;
+    public Image imageDisplay;
 
     RectTransform imageContainer;
-    Image imageDisplay;
 
     public Vector3 offset = new Vector3(75, 200, 0);
 
@@ -20,15 +19,11 @@ public class ProductDisplay : MonoBehaviour
     void Start()
     {
         objectToFollow = transform;
-        imageDisplay = GetComponentInChildren<Canvas>()
-            .GetComponentInChildren<Image>()
-            .GetComponentsInChildren<Image>()[0];
         imageContainer = GetComponentInChildren<Canvas>()
             .GetComponentInChildren<Image>()
             .rectTransform;
         
         imageContainer.gameObject.SetActive(false);
-        DisplayProduct();
     }
 
     // Update is called once per frame
@@ -39,12 +34,13 @@ public class ProductDisplay : MonoBehaviour
         imageContainer.position = followPoint;
     }
 
-    public void DisplayProduct()
+    public void DisplayProduct(Product product)
     {
         if (!imageContainer.gameObject.activeSelf)
         {
+            Debug.Log(product.productName);
             imageContainer.gameObject.SetActive(true);
-            imageDisplay.sprite = product;
+            imageDisplay.sprite = product.image;
             StartCoroutine(ShowProduct());
         }
     }

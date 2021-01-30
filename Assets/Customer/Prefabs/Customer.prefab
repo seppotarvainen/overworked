@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d9b577cf0b1a046aab9c47137344de7c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -214,7 +214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afcb8398b04946e8a28a6d326bfe10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productName: Oltermanni
+  product:
+    image: {fileID: 0}
+    productName: 
 --- !u!135 &608891851683377992
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -240,8 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda027295728642a3af018b588761e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showtime: 2
-  product: {fileID: 21300000, guid: d9b577cf0b1a046aab9c47137344de7c, type: 3}
+  showtime: 5
+  imageDisplay: {fileID: 9162184058214208579}
   offset: {x: 75, y: 200, z: 0}
 --- !u!65 &8416689612941177168
 BoxCollider:

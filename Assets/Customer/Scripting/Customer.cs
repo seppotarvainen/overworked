@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Customer : MonoBehaviour
 {
-  
-    public string productName = "";
+
+    public Product product;
 
     private bool isProductFound = false;
     private Transform followed;
@@ -23,6 +23,8 @@ public class Customer : MonoBehaviour
         // add +1 customer
         animator = GetComponentInChildren<Animator>();
         productDisplay = GetComponent<ProductDisplay>();
+        product = ProductService.Instance.GetRandomProduct();
+
     }
 
     void Update()
@@ -45,8 +47,8 @@ public class Customer : MonoBehaviour
 
     public void ShowRequiredProduct()
     {
-        productDisplay.DisplayProduct();
-        Debug.Log(productName);
+        productDisplay.DisplayProduct(product);
+        Debug.Log(product.productName);
     }
 
     private void FollowPlayer(Player player)
@@ -55,8 +57,8 @@ public class Customer : MonoBehaviour
         StartCoroutine(RunFollow());
     }
 
-    public bool GiveProduct(string foundProduct) {
-        isProductFound = productName.Equals(foundProduct);
+    public bool IsCorrectProduct(Product foundProduct) {
+        isProductFound = product.productName.Equals(foundProduct);
         return isProductFound;
     }
 
