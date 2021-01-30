@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class SmoothCameraScript : MonoBehaviour
 {
-
-    public Transform target;
-    public float speed = 0.0125f;
-    public Vector3 offset;
+    [SerializeField] private Transform target;
+    [SerializeField] private float speed = 0.0125f;
+    [SerializeField] private Vector3 offset;
     private Vector3 shakeOffset;
 
     void FixedUpdate()

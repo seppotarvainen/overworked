@@ -19,4 +19,5 @@ public class subtaskScript : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
 }
