@@ -61,11 +61,25 @@ public class Customer : MonoBehaviour
         if (player == null)
             return;
 
-        ShowRequiredProduct();
-
-        if (followed == null)
+        if (IsCorrectProduct(player.GetProduct()) && !isProductFound)
         {
-            FollowPlayer(player);
+            StopAllCoroutines();
+            followed = null;
+            isProductFound = true;
+            StartCoroutine(WalkToExit());
+        }
+        else if(!isProductFound)
+        {
+            ShowRequiredProduct();
+
+            if (followed == null)
+            {
+                FollowPlayer(player);
+            }
+        }
+        else
+        {
+            Debug.Log("Kiitosta vaan!");
         }
     }
 
@@ -84,11 +98,27 @@ public class Customer : MonoBehaviour
     }
 
     public bool IsCorrectProduct(Product foundProduct) {
-        isProductFound = product.productName.Equals(foundProduct);
 
-        // if correct, set destination to exit.
+        if (foundProduct == null)
+            return false;
 
-        return isProductFound;
+        return product.productName.Equals(foundProduct.productName);
+    }
+
+    private IEnumerator WalkToExit()
+    {
+        agent.destination = exitPosition;
+        float diff = 10;
+        animator.SetBool("isWalking", true);
+
+        while (diff >= agent.stoppingDistance)
+        {
+            diff = (transform.position - agent.destination).magnitude;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     private IEnumerator RunWalkFreely()
@@ -102,7 +132,6 @@ public class Customer : MonoBehaviour
         {
             Vector3 diff = transform.position - agent.destination;
 
-            Debug.Log(string.Format("{0}, {1}", diff.magnitude, agent.stoppingDistance));
             if (diff.magnitude <= agent.stoppingDistance)
             {
                 animator.SetBool("isWalking", false);

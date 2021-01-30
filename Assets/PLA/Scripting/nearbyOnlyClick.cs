@@ -10,6 +10,11 @@ public class nearbyOnlyClick : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+
+        bool isPlayer = other.GetComponentInParent<Player>() != null;
+
+        if (!isPlayer) return;
+
         gameObject.layer = 2;
         rendererGo.AddComponent<Outline>();
         for (int i = 0; i < gameObject.transform.childCount; i++)
@@ -23,6 +28,10 @@ public class nearbyOnlyClick : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+
+        bool isPlayer = other.GetComponentInParent<Player>() != null;
+        if (!isPlayer) return;
+
         gameObject.layer = 0;
         Destroy(rendererGo.GetComponent<Outline>());
         for (int i = 0; i < gameObject.transform.childCount; i++)
