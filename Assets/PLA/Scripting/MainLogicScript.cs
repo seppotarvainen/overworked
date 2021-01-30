@@ -6,6 +6,12 @@ public class MainLogicScript : MonoBehaviour
 {
 
     public GameObject SubtaskModal;
+    private Player player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
 
     void Update()
     {
@@ -19,7 +25,8 @@ public class MainLogicScript : MonoBehaviour
             }
             if (hit && hitInfo.transform.gameObject.tag == "storeitem") 
             {
-                Debug.Log("picked up item "+hitInfo.transform.gameObject.transform.parent.name);
+                string productName = hitInfo.transform.gameObject.transform.parent.name;
+                player.SetProduct(productName);
                 hitInfo.transform.gameObject.transform.parent.gameObject.SetActive(false);
             }
         }

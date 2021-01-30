@@ -13,18 +13,23 @@ public class CustomerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shelfArray = GameObject.FindGameObjectsWithTag("shelf");
-        foreach(GameObject shelf in shelfArray)
-        {
-            shelfPositions.Add(shelf.transform.position + (shelf.transform.forward * 1.25f));
-        }
-
         StartCoroutine(SpawnCustomers());
     }
 
 
     private IEnumerator SpawnCustomers()
     {
+        yield return new WaitForSeconds(1);
+        shelfArray = GameObject.FindGameObjectsWithTag("shelf");
+        foreach (GameObject shelf in shelfArray)
+        {
+            Vector3 pos = shelf.transform.position;
+            pos.y = 1;
+            Debug.Log(pos);
+
+            shelfPositions.Add(pos);
+        }
+
         while (GameManager.Instance.isGameRunning)
         {
             GameObject newCustomer = Instantiate(customer);

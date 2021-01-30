@@ -9,13 +9,22 @@ public class nearbyOnlyClick : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        gameObject.layer = 2;
-        rendererGo.AddComponent<Outline>();
+        bool isPlayer = other.GetComponentInParent<Player>() != null;
+
+        if (isPlayer)
+        {
+            gameObject.layer = 2;
+            rendererGo.AddComponent<Outline>();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        gameObject.layer = 0;
-        Destroy(rendererGo.GetComponent<Outline>());
+        bool isPlayer = other.GetComponentInParent<Player>() != null;
+        if (isPlayer)
+        {
+            gameObject.layer = 0;
+            Destroy(rendererGo.GetComponent<Outline>());
+        }
     }
 }

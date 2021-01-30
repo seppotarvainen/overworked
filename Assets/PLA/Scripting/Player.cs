@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float sprintMul = 1.0f;
     private float gravityValue = -9.81f;
     private bool isMoving;
+    private Product product;
 
     Animator animator;
 
@@ -34,6 +35,22 @@ public class Player : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
     } */
+
+    public void SetProduct(string productName)
+    {
+        product = ProductService.Instance.GetProduct(productName);
+        Debug.Log("Product set " + product.productName);
+    }
+
+    public Product GetProduct()
+    {
+        if (product != null)
+        {
+            Debug.Log("Product get " + product.productName);
+        }
+        
+        return product;
+    }
 
     void Update()
     {
