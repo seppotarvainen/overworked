@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1665811095636358955, guid: ebfce13818ac249339cb6de4bc10e5b2, type: 3}
+      propertyPath: offset.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665811095636358955, guid: ebfce13818ac249339cb6de4bc10e5b2, type: 3}
+      propertyPath: offset.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665811095636358955, guid: ebfce13818ac249339cb6de4bc10e5b2, type: 3}
+      propertyPath: speechBubble
+      value: 
+      objectReference: {fileID: 21300000, guid: da0ec85e1918a46e1aff03282ea426e6, type: 3}
     - target: {fileID: 2313457874147481931, guid: ebfce13818ac249339cb6de4bc10e5b2, type: 3}
       propertyPath: m_RootOrder
       value: 4

@@ -15,12 +15,14 @@ public class Customer : MonoBehaviour
     private float speed = 2f;
     private float turnSpeed = 5f;
     private float targetDistance = 1.5f;
+    private ProductDisplay productDisplay;
 
 
     void Start()
     {
         // add +1 customer
         animator = GetComponentInChildren<Animator>();
+        productDisplay = GetComponent<ProductDisplay>();
     }
 
     void Update()
@@ -43,6 +45,7 @@ public class Customer : MonoBehaviour
 
     public void ShowRequiredProduct()
     {
+        productDisplay.DisplayProduct();
         Debug.Log(productName);
     }
 
