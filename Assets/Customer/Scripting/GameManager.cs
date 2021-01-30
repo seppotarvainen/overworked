@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public bool isGameRunning = true;
 
     private int maxCustomerCount = 30;
     private int customerCount;
