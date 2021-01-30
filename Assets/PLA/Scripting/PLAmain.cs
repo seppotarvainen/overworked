@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PLAmain : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    public GameObject SubtaskModal;
+
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hitInfo = new RaycastHit();
+            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+            if (hit && hitInfo.transform.gameObject.tag == "interactable") 
+            {
+                SubtaskModal.SetActive(true);
+            }
+        } 
     }
 }
