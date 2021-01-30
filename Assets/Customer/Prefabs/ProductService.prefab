@@ -48,3 +48,9 @@ MonoBehaviour:
     productName: juusto
   - image: {fileID: 21300000, guid: 01609785e5e4e455d81d0743b84ec5fc, type: 3}
     productName: hillo
+  - image: {fileID: 21300000, guid: d64877ecd7354421c9df4e9c244b479e, type: 3}
+    productName: voi
+  - image: {fileID: 21300000, guid: 5dfef78fbd6544a8f858f0c0f8dff1f4, type: 3}
+    productName: omena
+  - image: {fileID: 21300000, guid: 38e371e237fff4b70b862c9e216816a1, type: 3}
+    productName: appelsiini
