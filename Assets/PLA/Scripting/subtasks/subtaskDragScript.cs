@@ -39,5 +39,4 @@ public class subtaskDragScript : MonoBehaviour, IPointerDownHandler, IBeginDragH
     public void OnPointerDown(PointerEventData eventData) {
         Debug.Log("wat");
     }
-    
 }

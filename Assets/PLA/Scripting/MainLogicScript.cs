@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PLAmain : MonoBehaviour
+public class MainLogicScript : MonoBehaviour
 {
 
     public GameObject SubtaskModal;

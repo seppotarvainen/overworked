@@ -15,10 +15,12 @@ public class Player : MonoBehaviour
 
     Animator animator;
 
+    [SerializeField] private GameObject selectedPlayermodel;
+
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        animator = selectedPlayermodel.GetComponent<Animator>();
     }
 
 
