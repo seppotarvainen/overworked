@@ -17,23 +17,26 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject selectedPlayermodel;
 
+    void Awake()
+    {
+        StartCoroutine("idleTimer");
+    }
+
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         animator = selectedPlayermodel.GetComponent<Animator>();
     }
 
-
-// movement ja animaatio loppuu kun tormataan seinaan (ei toimi)
-/*     void OnCollisionEnter(Collision collision)
+    IEnumerator idleTimer()
     {
-        if(collision.gameObject.tag == "wall")
+        while(true)
         {
-            rb.velocity = Vector3.zero;
-            //Debug.Log("hit wall");
-            animator.SetBool("isWalking", false);
+            yield return new WaitForSeconds(Random.Range(2.0f, 15.0f));
+            if (!isMoving)
+                animator.SetTrigger("startIdle");
         }
-    } */
+    }
 
     void Update()
     {
@@ -54,11 +57,13 @@ public class Player : MonoBehaviour
         if (!isWalking && (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0))
         {
             animator.SetBool("isWalking", true);
+            isMoving = true;
         }
         if (isWalking && (Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0)) 
         {
             animator.SetBool("isWalking", false);
             animator.SetBool("isRunning", false);
+            isMoving = false;
             sprintMul = 1.0f;
         }
 
