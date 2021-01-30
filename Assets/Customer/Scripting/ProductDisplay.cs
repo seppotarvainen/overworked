@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class ProductDisplay : MonoBehaviour
 {
     Transform objectToFollow;
-    public float showtime = 2f;
+    public float showtime = 5f;
 
-    public Sprite speechBubble;
+    public Sprite product;
 
-    RectTransform imageTransform;
+    RectTransform imageContainer;
     Image imageDisplay;
+
     public Vector3 offset = new Vector3(75, 200, 0);
 
     // RectTransform moodDisplay;
@@ -20,12 +21,13 @@ public class ProductDisplay : MonoBehaviour
     {
         objectToFollow = transform;
         imageDisplay = GetComponentInChildren<Canvas>()
-            .GetComponentInChildren<Image>();
-        imageTransform = GetComponentInChildren<Canvas>()
+            .GetComponentInChildren<Image>()
+            .GetComponentsInChildren<Image>()[0];
+        imageContainer = GetComponentInChildren<Canvas>()
             .GetComponentInChildren<Image>()
             .rectTransform;
-
-        imageDisplay.enabled = false;
+        
+        imageContainer.gameObject.SetActive(false);
         DisplayProduct();
     }
 
@@ -34,15 +36,15 @@ public class ProductDisplay : MonoBehaviour
     {
         Vector3 followPoint = Camera.main.WorldToScreenPoint(objectToFollow.transform.position);
         followPoint += offset;
-        imageTransform.position = followPoint;
+        imageContainer.position = followPoint;
     }
 
     public void DisplayProduct()
     {
-        if (!imageDisplay.enabled)
+        if (!imageContainer.gameObject.activeSelf)
         {
-            imageDisplay.enabled = true;
-            imageDisplay.sprite = speechBubble;
+            imageContainer.gameObject.SetActive(true);
+            imageDisplay.sprite = product;
             StartCoroutine(ShowProduct());
         }
     }
@@ -54,7 +56,7 @@ public class ProductDisplay : MonoBehaviour
         {
             yield return null;
         }
-        imageDisplay.enabled = false;
+        imageContainer.gameObject.SetActive(false);
     }
 
 }
