@@ -345,33 +345,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1491453533381555559, guid: fb55966725b68de40bff11d68a382905, type: 3}
-      propertyPath: playerSpeed
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1934634794298865699, guid: fb55966725b68de40bff11d68a382905, type: 3}
-      propertyPath: m_Center.y
-      value: 0.9
-      objectReference: {fileID: 0}
+    - target: {fileID: 1007312793, guid: fb55966725b68de40bff11d68a382905, type: 3}
+      propertyPath: soundcontrol
+      value: 
+      objectReference: {fileID: 531164082}
+    - target: {fileID: 1850235733, guid: fb55966725b68de40bff11d68a382905, type: 3}
+      propertyPath: soundcontrol
+      value: 
+      objectReference: {fileID: 531164082}
     - target: {fileID: 1942596340465991074, guid: fb55966725b68de40bff11d68a382905, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317044313625652659, guid: fb55966725b68de40bff11d68a382905, type: 3}
-      propertyPath: m_Drag
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317044313625652659, guid: fb55966725b68de40bff11d68a382905, type: 3}
-      propertyPath: m_Mass
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832307087413531325, guid: fb55966725b68de40bff11d68a382905, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e07827f0392f44d48a5e47ba2359c023, type: 2}
-    - target: {fileID: 8302938762781953536, guid: fb55966725b68de40bff11d68a382905, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8662779317182458556, guid: fb55966725b68de40bff11d68a382905, type: 3}
       propertyPath: m_RootOrder
@@ -569,24 +553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51413f0e6d2c350499deec23c5792c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1007312792 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8679041749164807354, guid: fb55966725b68de40bff11d68a382905, type: 3}
-  m_PrefabInstance: {fileID: 216278260}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1007312793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007312792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e957992e107d8c43a8724e6da579e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundcontrol: {fileID: 531164082}
 --- !u!1 &1014705037 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 97961a5a2c5493245b3157921ca3072b, type: 3}
@@ -1368,24 +1334,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2412b7be2f1b7ce45b815c9af04068bc, type: 3}
---- !u!1 &1850235729 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 435395375591943584, guid: fb55966725b68de40bff11d68a382905, type: 3}
-  m_PrefabInstance: {fileID: 216278260}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1850235733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850235729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e957992e107d8c43a8724e6da579e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundcontrol: {fileID: 531164082}
 --- !u!1 &2005494088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2011153557300483737, guid: efc8854fe70fa7e418baeffc4698f98a, type: 3}
@@ -1511,118 +1459,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ASGO_FS
-      value: 
-      objectReference: {fileID: 9025880323801786569}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.size
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: b70d04f1f7e251b4f8629b271d71c623, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 4d11813f5983ce047873c94858e6a6c1, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6154d2d90f91ac743a30a16a58f9fa32, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 4544cd1f9b0d00a498e3602ecfffcacc, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2921c47b0bdded540b5b813c1e60001c, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 825d688f717750646b0a05cb2db4ae16, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: df0f02816989a0348b801669beb67362, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 90f0af26cb589f64eaae4a27d022a1d3, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[8]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8ce4499bbd5a13e408937e979191ac28, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: b8da35185c17df440a0d9e0309ac22a3, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[10]
-      value: 
-      objectReference: {fileID: 8300000, guid: 209ae35949b251d4a83610a1e5992a2f, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[11]
-      value: 
-      objectReference: {fileID: 8300000, guid: 10485b9efe2bd994f98d392f91dd1a0a, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[12]
-      value: 
-      objectReference: {fileID: 8300000, guid: ed6bb89be19053b4abdfe85ac7daf25f, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[13]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9a7a2d7c3f0efa7408e14bd09744808d, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[14]
-      value: 
-      objectReference: {fileID: 8300000, guid: 27ff539436f259348b7138c14d3885cc, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[15]
-      value: 
-      objectReference: {fileID: 8300000, guid: a6e2596331387124da8e81d37da68ae2, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[16]
-      value: 
-      objectReference: {fileID: 8300000, guid: ec02951caf7cd1f4fbc24fe9960cc69a, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[17]
-      value: 
-      objectReference: {fileID: 8300000, guid: 7250925503d24ac4184011ccade045dd, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[18]
-      value: 
-      objectReference: {fileID: 8300000, guid: 02dc709a1e386674e8d05d3c04baa6f7, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[19]
-      value: 
-      objectReference: {fileID: 8300000, guid: c92fd58ac6b91794ba82b93ef3f4e00e, type: 3}
-    - target: {fileID: 1327581168784003439, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: ac_FS.Array.data[20]
-      value: 
-      objectReference: {fileID: 8300000, guid: a70895712392d4345be385abfae08f28, type: 3}
     - target: {fileID: 4722832197151933352, guid: 354095e38e1103a4a8389dad97118577, type: 3}
       propertyPath: m_Name
       value: SoundController
       objectReference: {fileID: 0}
-    - target: {fileID: 6065184440548367056, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065184440548367056, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065184440548367056, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-      propertyPath: BypassListenerEffects
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 354095e38e1103a4a8389dad97118577, type: 3}
---- !u!82 &9025880323801786569 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6065184440548367056, guid: 354095e38e1103a4a8389dad97118577, type: 3}
-  m_PrefabInstance: {fileID: 9025880323801786568}
-  m_PrefabAsset: {fileID: 0}

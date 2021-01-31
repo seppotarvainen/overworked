@@ -10,6 +10,12 @@ public class nearbyOnlyClick : MonoBehaviour
     [SerializeField] private subtaskScript subtaskscr;
     [SerializeField] private soundController soundcontrol;
     [SerializeField] private bool iatask;
+    [SerializeField] private string productName;
+
+    public string GetProductName()
+    {
+        return productName;
+    }
     
     private void OnTriggerEnter(Collider other)
     {
