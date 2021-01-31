@@ -32,6 +32,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5993134776204044629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135290337325314997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e957992e107d8c43a8724e6da579e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundcontrol: {fileID: 0}
 --- !u!1 &1335677700592519606
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showtime: 5
   imageDisplay: {fileID: 9162184058214208579}
+  heartIcon: {fileID: 21300000, guid: 5ab08e54da7b543ba92399ed0146e2ea, type: 3}
   offset: {x: 75, y: 200, z: 0}
 --- !u!195 &-8310391806859295311
 NavMeshAgent:

@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    
-    [SerializeField] private List<GameObject> storeShelves = new List<GameObject>();
     private string prodName;
     private Texture prodSprite;
 
     public List<GameObject> spawnedItems = new List<GameObject>();
 
+    private List<nearbyOnlyClick> clickableShelves = new List<nearbyOnlyClick>();
+
     Renderer m_Renderer;
 
     void Start()
     {
-        foreach (GameObject obj in storeShelves)
+        clickableShelves = new List<nearbyOnlyClick>(GetComponentsInChildren<nearbyOnlyClick>());
+
+        foreach (nearbyOnlyClick shelf in clickableShelves)
         {
-            prodName = ProductService.Instance.GetRandomProduct().productName;
+            GameObject obj = shelf.gameObject;
+
+            prodName = shelf.GetProductName() != "" ?
+                shelf.GetProductName() :
+                ProductService.Instance.GetRandomProduct().productName;
+
             prodSprite = ProductService.Instance.GetProduct(prodName).image.texture;
             
             for (int i = 0; i < obj.transform.childCount; i++)

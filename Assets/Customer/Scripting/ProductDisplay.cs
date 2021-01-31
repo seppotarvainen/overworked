@@ -9,6 +9,7 @@ public class ProductDisplay : MonoBehaviour
     public float showtime = 5f;
 
     public Image imageDisplay;
+    public Sprite heartIcon;
 
     RectTransform imageContainer;
 
@@ -41,6 +42,16 @@ public class ProductDisplay : MonoBehaviour
             Debug.Log(product.productName);
             imageContainer.gameObject.SetActive(true);
             imageDisplay.sprite = product.image;
+            StartCoroutine(ShowProduct());
+        }
+    }
+
+    public void DisplayGratitude()
+    {
+        if (!imageContainer.gameObject.activeSelf)
+        {
+            imageContainer.gameObject.SetActive(true);
+            imageDisplay.sprite = heartIcon;
             StartCoroutine(ShowProduct());
         }
     }
