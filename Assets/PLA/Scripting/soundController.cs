@@ -7,7 +7,9 @@ public class soundController : MonoBehaviour
     [SerializeField] private AudioClip ac_BGM;
     [SerializeField] private List<AudioClip> ac_SFX = new List<AudioClip>();
     [SerializeField] private List<AudioClip> ac_SFX_Rumbles = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> ac_FS = new List<AudioClip>();
     [SerializeField] private AudioSource ASGO_SFX;
+    [SerializeField] private AudioSource ASGO_FS;
     [SerializeField] private AudioSource ASGO_MUSIC;
     [SerializeField] private AudioSource ASGO_VOX;
 
@@ -51,6 +53,17 @@ public class soundController : MonoBehaviour
                 ASGO_VOX.PlayOneShot(acVOXItem, vol);
                 break;
             }
+        }
+    }
+
+    public void PlayFSOneshot()
+    {
+        AudioClip acFSItem;
+        for (int i = 0; i< ac_FS.Count; i++)
+        {
+            acFSItem = ac_FS[i];
+            ASGO_VOX.PlayOneShot(acFSItem, 0.1f);
+            Debug.Log(acFSItem);
         }
     }
 }

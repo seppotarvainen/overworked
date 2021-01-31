@@ -17,5 +17,4 @@ public class subtaskScript : MonoBehaviour
         soundcontrol.PlaySFXOneshot("sfx-tada");
         gameObject.SetActive(false);
     }
-
 }
