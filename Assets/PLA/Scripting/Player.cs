@@ -8,9 +8,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody rb;
     private Vector3 playerVelocity;
-    public float playerSpeed = 1.0f;
+    public float playerSpeed = 16.0f;
     public float sprintMul = 1.0f;
-    private float gravityValue = -9.81f;
     private bool isMoving;
     private Product product;
 
@@ -89,7 +88,7 @@ public class Player : MonoBehaviour
         if (!isrunning && (isWalking && runPressed))
         {
             animator.SetBool("isRunning", true);
-            sprintMul = 2.0f;
+            sprintMul = 3.0f;
         }
 
         if (isrunning && (!isWalking || !runPressed))

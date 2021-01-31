@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class subtaskScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private soundController soundcontrol;
 
     public void callItQuits()
     {
+        soundcontrol.PlaySFXOneshot("sfx-close");
         gameObject.SetActive(false);
     }
     
     public void Completed()
     {
+        soundcontrol.PlaySFXOneshot("sfx-tada");
         gameObject.SetActive(false);
     }
 

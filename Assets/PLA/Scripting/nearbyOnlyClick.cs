@@ -7,6 +7,9 @@ public class nearbyOnlyClick : MonoBehaviour
 {
     [SerializeField] private GameObject rendererGo;
     [SerializeField] private GameObject subtask;
+    [SerializeField] private subtaskScript subtaskscr;
+    [SerializeField] private soundController soundcontrol;
+    [SerializeField] private bool iatask;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -41,9 +44,9 @@ public class nearbyOnlyClick : MonoBehaviour
                 gameObject.transform.GetChild(i).GetChild(0).gameObject.layer = 2;
             }
         }
-        if (subtask != null)
+        if (iatask && subtask.activeSelf)
         {
-            subtask.SetActive(false);
+            subtaskscr.callItQuits();
         }
     }
 }

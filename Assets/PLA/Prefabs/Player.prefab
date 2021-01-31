@@ -23,7 +23,7 @@ Animator:
   m_GameObject: {fileID: 435395375591943584}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b21591fbda2c1eb42ada2a91a5c623d9, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -74,7 +74,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942596340465991074}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 7
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d3746570497874cbc8b6bd0d93462e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 24
+  playerSpeed: 16
   sprintMul: 1
   selectedPlayermodel: {fileID: 8679041749164807354}
 --- !u!65 &1934634794298865699

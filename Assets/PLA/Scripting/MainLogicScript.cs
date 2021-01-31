@@ -7,6 +7,7 @@ public class MainLogicScript : MonoBehaviour
 
     public GameObject SubtaskModal;
     private Player player;
+    [SerializeField] private soundController soundcontrol;
 
     private void Start()
     {
@@ -22,11 +23,13 @@ public class MainLogicScript : MonoBehaviour
             if (hit && hitInfo.transform.gameObject.tag == "interactable") 
             {
                 SubtaskModal.SetActive(true);
+                soundcontrol.PlaySFXOneshot("sfx-open");
             }
             if (hit && hitInfo.transform.gameObject.tag == "storeitem") 
             {
                 string productName = hitInfo.transform.gameObject.transform.parent.name;
                 player.SetProduct(productName);
+                soundcontrol.PlaySFXOneshot("rumble");
                 hitInfo.transform.gameObject.transform.parent.gameObject.SetActive(false);
             }
         }

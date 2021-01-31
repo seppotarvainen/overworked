@@ -7,6 +7,7 @@ public class subtaskDragScript : MonoBehaviour, IBeginDragHandler, IEndDragHandl
 {
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject textinfo;
+    [SerializeField] private soundController soundcontrol;
 
     private RectTransform itemRectTransform;
     private CanvasGroup itemCanvasGroup;
