@@ -2094,25 +2094,72 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 95
       objectReference: {fileID: 0}
+    - target: {fileID: 3355136949573831017, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355136949573831017, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355136949573831017, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355136949573831017, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355136949573831017, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355136949573831017, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355136949573831017, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355136949573831017, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4223881672287404269, guid: be991d4146a5458438951708d6afe839, type: 3}
       propertyPath: soundcontrol
       value: 
       objectReference: {fileID: 346735398}
+    - target: {fileID: 5131339059847644923, guid: be991d4146a5458438951708d6afe839, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6145102422201874520, guid: be991d4146a5458438951708d6afe839, type: 3}
       propertyPath: m_Text
-      value: 'Help the customers find their products.
+      value: 'Help the customers find the products they''re looking for. Get the
+        correct object and bumb into customer again.
 
 
-        Movement: Arrow keys
-        + WSAD
+        Keep in mind that
+        It is Corona time, so there must not be over 30 customer simultaneously at
+        the store!
+
+
+        Movement: Arrow keys + WSAD
 
         Run: Shift
 
-'
+        Quit:
+        Esc
+
+        Pick object: When shelf is highlighted, click a jar.
+
+        Volume:
+        Adjust from your speakers...'
       objectReference: {fileID: 0}
     - target: {fileID: 6145102422201874520, guid: be991d4146a5458438951708d6afe839, type: 3}
       propertyPath: m_FontData.m_Alignment
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8325793652403607945, guid: be991d4146a5458438951708d6afe839, type: 3}
       propertyPath: m_RootOrder
