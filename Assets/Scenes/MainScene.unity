@@ -458,6 +458,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1007312793, guid: fb55966725b68de40bff11d68a382905, type: 3}
+      propertyPath: soundcontrol
+      value: 
+      objectReference: {fileID: 346735398}
+    - target: {fileID: 1850235733, guid: fb55966725b68de40bff11d68a382905, type: 3}
+      propertyPath: soundcontrol
+      value: 
+      objectReference: {fileID: 346735398}
     - target: {fileID: 1491453533381555559, guid: fb55966725b68de40bff11d68a382905, type: 3}
       propertyPath: playerSpeed
       value: 16
@@ -532,42 +540,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb55966725b68de40bff11d68a382905, type: 3}
---- !u!1 &213626427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8679041749164807354, guid: fb55966725b68de40bff11d68a382905, type: 3}
-  m_PrefabInstance: {fileID: 213626426}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &213626428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 435395375591943584, guid: fb55966725b68de40bff11d68a382905, type: 3}
-  m_PrefabInstance: {fileID: 213626426}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &213626429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213626427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e957992e107d8c43a8724e6da579e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundcontrol: {fileID: 346735398}
---- !u!114 &213626430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213626428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e957992e107d8c43a8724e6da579e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundcontrol: {fileID: 346735398}
 --- !u!1 &324074331
 GameObject:
   m_ObjectHideFlags: 0
