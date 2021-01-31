@@ -1707,6 +1707,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8492242060212655384, guid: 34478a8c9b0f5e443aa0ae4b655015c0, type: 3}
   m_PrefabInstance: {fileID: 735316894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1678999983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6582231958780864366, guid: 34478a8c9b0f5e443aa0ae4b655015c0, type: 3}
+  m_PrefabInstance: {fileID: 735316894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678999982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51413f0e6d2c350499deec23c5792c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1757945917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1876,6 +1887,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 368941120387570412, guid: 2412b7be2f1b7ce45b815c9af04068bc, type: 3}
+      propertyPath: iatask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 368941120387570412, guid: 2412b7be2f1b7ce45b815c9af04068bc, type: 3}
+      propertyPath: subtaskscr
+      value: 
+      objectReference: {fileID: 1678999983}
+    - target: {fileID: 368941120387570412, guid: 2412b7be2f1b7ce45b815c9af04068bc, type: 3}
+      propertyPath: soundcontrol
+      value: 
+      objectReference: {fileID: 346735398}
     - target: {fileID: 1805046576569987506, guid: 2412b7be2f1b7ce45b815c9af04068bc, type: 3}
       propertyPath: m_IsTrigger
       value: 1
