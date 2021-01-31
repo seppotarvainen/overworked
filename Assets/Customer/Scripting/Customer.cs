@@ -22,7 +22,7 @@ public class Customer : MonoBehaviour
     void Start()
     {
         GameManager.Instance.AddCustomer();
-        exitPosition = transform.position;
+        exitPosition = GameObject.FindGameObjectWithTag("Finish").GetComponent<Transform>().position;
         agent = GetComponent<NavMeshAgent>();
 
         animator = GetComponentInChildren<Animator>();
@@ -67,6 +67,7 @@ public class Customer : MonoBehaviour
             followed = null;
             isProductFound = true;
             StartCoroutine(WalkToExit());
+            StartCoroutine(FailSafe());
         }
         else if(!isProductFound)
         {
@@ -79,10 +80,9 @@ public class Customer : MonoBehaviour
         }
         else
         {
-            Debug.Log("Kiitosta vaan!");
+            productDisplay.DisplayGratitude();
         }
     }
-
 
     public void ShowRequiredProduct()
     {
@@ -105,6 +105,13 @@ public class Customer : MonoBehaviour
         return product.productName.Equals(foundProduct.productName);
     }
 
+    private IEnumerator FailSafe()
+    {
+        yield return new WaitForSeconds(15);
+        GameManager.Instance.RemoveCustomer();
+        Destroy(gameObject);
+    }
+
     private IEnumerator WalkToExit()
     {
         agent.destination = exitPosition;
@@ -118,6 +125,7 @@ public class Customer : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
+        GameManager.Instance.RemoveCustomer();
         Destroy(gameObject);
     }
 
