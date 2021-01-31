@@ -59,11 +59,10 @@ public class soundController : MonoBehaviour
     public void PlayFSOneshot()
     {
         AudioClip acFSItem;
-        for (int i = 0; i< ac_FS.Count; i++)
-        {
-            acFSItem = ac_FS[i];
-            ASGO_VOX.PlayOneShot(acFSItem, 0.1f);
-            Debug.Log(acFSItem);
-        }
+
+        acFSItem = ac_FS[Random.Range(0,ac_FS.Count)];
+        ASGO_VOX.PlayOneShot(acFSItem, 0.1f);
+        Debug.Log(acFSItem);
+        
     }
 }

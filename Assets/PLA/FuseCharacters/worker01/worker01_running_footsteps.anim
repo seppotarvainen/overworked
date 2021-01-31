@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: worker_01_running_footsteps
+  m_Name: worker01_running_footsteps
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
