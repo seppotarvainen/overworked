@@ -5,7 +5,7 @@ using UnityEngine;
 public class CustomerSpawner : MonoBehaviour
 {
     public float spawnInterval = 60;
-    public GameObject customer;
+    public GameObject[] customers;
     GameObject[] shelfArray;
 
     private List<Vector3> shelfPositions = new List<Vector3>();
@@ -14,6 +14,11 @@ public class CustomerSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnCustomers());
+    }
+
+    private GameObject GetRandomCustomer()
+    {
+        return customers[Random.Range(0, customers.Length + 1)];
     }
 
 
@@ -32,7 +37,7 @@ public class CustomerSpawner : MonoBehaviour
 
         while (GameManager.Instance.isGameRunning)
         {
-            GameObject newCustomer = Instantiate(customer);
+            GameObject newCustomer = Instantiate(GetRandomCustomer());
             newCustomer.transform.position = transform.position;
             Customer customerScript = newCustomer.GetComponent<Customer>();
             customerScript.SetShelfPositions(shelfPositions);

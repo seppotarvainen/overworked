@@ -1096,6 +1096,26 @@ PrefabInstance:
       propertyPath: spawnInterval
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3728025841522212060, guid: 8741f9be0d5c84bf5b503c3ac4d0249d, type: 3}
+      propertyPath: customers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728025841522212060, guid: 8741f9be0d5c84bf5b503c3ac4d0249d, type: 3}
+      propertyPath: customers.Array.data[0]
+      value: 
+      objectReference: {fileID: 4816088931895610965, guid: ebfce13818ac249339cb6de4bc10e5b2, type: 3}
+    - target: {fileID: 3728025841522212060, guid: 8741f9be0d5c84bf5b503c3ac4d0249d, type: 3}
+      propertyPath: customers.Array.data[1]
+      value: 
+      objectReference: {fileID: 4816088931895610965, guid: b6998ea13b820495e9977286ecb8747b, type: 3}
+    - target: {fileID: 3728025841522212060, guid: 8741f9be0d5c84bf5b503c3ac4d0249d, type: 3}
+      propertyPath: customers.Array.data[2]
+      value: 
+      objectReference: {fileID: 4816088931895610965, guid: c3c9f973a0484419caa6728283cf37b1, type: 3}
+    - target: {fileID: 3728025841522212060, guid: 8741f9be0d5c84bf5b503c3ac4d0249d, type: 3}
+      propertyPath: customers.Array.data[3]
+      value: 
+      objectReference: {fileID: 4816088931895610965, guid: c8be5bf5eb9ae4787b6e4aadff3ce941, type: 3}
     - target: {fileID: 3728025841522212061, guid: 8741f9be0d5c84bf5b503c3ac4d0249d, type: 3}
       propertyPath: m_RootOrder
       value: 6
